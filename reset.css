@@ -1,0 +1,77 @@
+/* Reset CSS for cross-browser consistency */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Remove default font styles */
+body,
+h1, h2, h3, h4, h5, h6,
+p, ul, ol, li,
+figure, figcaption,
+blockquote, dl, dt, dd {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    font-size: 100%;
+}
+
+/* Set a basic font style */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+/* Set list styles to none */
+ul,
+ol {
+    list-style: none;
+}
+
+/* Remove default link styles */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Remove default table borders and spacing */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Reset image styling */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Reset button appearance */
+button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+/* Remove default form input styles */
+input, textarea, select {
+    font-family: inherit;
+    font-size: 100%;
+    border: none;
+    outline: none;
+    background: none;
+    color: inherit;
+}
+
+/* Reset form elements and set inherit font */
+input, button, textarea, select {
+    font-family: inherit;
+}

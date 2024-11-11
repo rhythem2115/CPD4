@@ -1,0 +1,219 @@
+/* Root variables for theme colors */
+:root {
+    --primary-color: #007acc; /* Blue */
+    --secondary-color: #ffffff; /* White for contrast */
+    --text-color: #222; /* Dark text color */
+    --background-color: #f5f5f5; /* Light background */
+    --highlight-color: #ffcb42; /* Highlight color */
+    --card-background: #1e90ff; /* Blue background for cards */
+    --card-text-color: #ffffff; /* White text color for cards */
+
+}
+
+/* Base styles */
+body {
+    font-family: Arial, sans-serif;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Header styles */
+header {
+    text-align: center;
+    background-color: var(--primary-color);
+    padding: 20px;
+}
+
+h1 {
+    color: var(--secondary-color);
+    font-size: clamp(2rem, 3vw + 1rem, 4rem);
+    margin: 0;
+}
+
+/* Section heading styling */
+h2, .section-title {
+    color: var(--highlight-color);
+    font-size: 1.8rem;
+    margin: 20px 0;
+    text-align: center;
+}
+
+/* Navigation links */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+nav li {
+    background-color: var(--highlight-color);
+    padding: 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav li a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav li:hover {
+    background-color: var(--primary-color);
+}
+
+nav li:hover a {
+    color: white;
+}
+
+/* Responsive Table */
+table {
+    width: 80%;
+    margin: auto;
+    border-collapse: collapse;
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+/* Mobile Reflow for Tables */
+@media (max-width: 600px) {
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+    thead {
+        display: none;
+    }
+    tr {
+        margin-bottom: 15px;
+    }
+    td {
+        border: none;
+        position: relative;
+        padding-left: 50%;
+        white-space: normal;
+    }
+    td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 45%;
+        padding-left: 10px;
+        font-weight: bold;
+    }
+}
+
+/* Individual Results Styling */
+.individual-results {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    margin: 20px auto;
+    width: 90%;
+}
+
+.individual-result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: var(--card-background);
+    color: var(--card-text-color);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.individual-result:hover {
+    transform: scale(1.05);
+}
+
+.individual-result img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 2px solid var(--card-text-color);
+}
+
+.individual-result div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.individual-result div p {
+    margin: 6px 0;
+
+
+    font-size: 1rem;
+}
+
+/* Dark Mode and High-Contrast Mode */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #1e1e1e;
+        color: #ffffff;
+    }
+    nav li {
+        background-color: #333;
+    }
+    nav li a {
+        color: #ffcb42;
+    }
+    table tr:nth-child(even) {
+        background-color: #333;
+    }
+    table th, table td {
+        border: 1px solid #555;
+    }
+    .individual-result {
+        background-color: #333;
+        border: 1px solid #555;
+    }
+}
+
+/* Animations */
+@media (prefers-reduced-motion: no-preference) {
+    nav li {
+        transition: background-color 0.3s, transform 0.2s;
+    }
+    nav li:hover {
+        transform: translateY(-5px);
+    }
+}
+
+/* Responsive Font Sizes */
+h1 {
+    font-size: clamp(1.5rem, 2vw + 1rem, 3rem);
+}
+
+nav li a {
+    font-size: clamp(1rem, 1.5vw + 0.5rem, 1.25rem);
+}
+
+/* Footer styling */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #222;
+    color: #fff;
+    font-size: 0.875rem;
+}
